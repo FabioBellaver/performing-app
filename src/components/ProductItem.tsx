@@ -6,12 +6,16 @@ interface ProductItemProps {
     price: number;
     title: string;
   };
+  onAddToWishlist: (id: number) => void;
 }
 
-function ProductItemComponent({ product }: ProductItemProps) {
+function ProductItemComponent({ product, onAddToWishlist }: ProductItemProps) {
   return (
     <div>
       {product.title} - <strong>{product.price}</strong>
+      <button onClick={() => onAddToWishlist(product.id)}>
+        Add to wishlist
+      </button>
     </div>
   );
 }
@@ -23,7 +27,7 @@ export const ProductItem = memo(
   }
 );
 
-    /*
+/*
     'memo' avoid the component to enter in the default renderization flux
     use case of 'memo'
     1 - Pure Functional Components ();

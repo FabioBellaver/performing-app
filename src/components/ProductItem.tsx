@@ -20,6 +20,9 @@ export const ProductItem = memo(
   ProductItemComponent,
   (prevProps, nextProps) => {
     return Object.is(prevProps.product, nextProps.product);
+  }
+);
+
     /*
     'memo' avoid the component to enter in the default renderization flux
     use case of 'memo'
@@ -28,5 +31,3 @@ export const ProductItem = memo(
     3 - Re-render with same props;
     4 - Medium to big size.
     */
-  }
-);
